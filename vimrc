@@ -53,7 +53,7 @@ set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store?                      " OSX bullshi
-set fillchars+=vert:\u2502
+"set fillchars+=vert:\u2502
 
 set backupskip=/tmp/*,/private/tmp/*
 
@@ -70,7 +70,7 @@ nnoremap <leader>z zMzvzz
 set viminfo+=%
 
 set list
-set listchars=tab:\u25b8\ ,extends:\u276f,precedes:\u276e,trail:.,nbsp:.
+set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:.,nbsp:.
 autocmd filetype html,xml,xhtml set listchars-=tab:>.
 
 "magic search
@@ -113,16 +113,6 @@ let g:molokai_original = 1
 
 colorscheme molokai
 
-if isdirectory($HOME . "/.vim/")
-    let s:dotdir = $HOME . "/.vim/"
-else
-    let s:dotdir = $HOME . "/vimfiles/"
-end
-
-exec "set directory=" . s:dotdir . "swap/"
-exec "set backupdir=" . s:dotdir . "backup/"
-exec "set undodir=" . s:dotdir . "undo/"
-
 " syntastic
 
 let g:syntastic_enable_signs = 1
@@ -148,3 +138,7 @@ nmap <leader>dd :Gdiff<cr>
 nmap <leader>o :CommandT<cr>
 
 nmap <leader><leader> <c-^>
+
+" Settings for VimClojure
+let vimclojure#HighlightBuiltins = 1     " Highlight Clojure's builtins
+let vimclojure#ParenRainbow = 1          " Rainbow parentheses'!
