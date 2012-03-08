@@ -1,6 +1,8 @@
 set nocompatible
 
 call pathogen#infect()
+syntax on
+filetype plugin indent on
 
 let mapleader = ","
 let maplocalleader = ","
@@ -140,5 +142,5 @@ nmap <leader>o :CommandT<cr>
 nmap <leader><leader> <c-^>
 
 " Settings for VimClojure
-let vimclojure#HighlightBuiltins = 1     " Highlight Clojure's builtins
-let vimclojure#ParenRainbow = 1          " Rainbow parentheses'!
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
