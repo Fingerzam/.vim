@@ -24,7 +24,7 @@ set showcmd
 set nonumber
 set norelativenumber
 set lazyredraw
-set showbreak=\u21aa
+set showbreak=→
 set splitbelow
 set splitright
 set ttimeout
@@ -65,6 +65,8 @@ nnoremap N Nzzzv
 
 noremap H ^
 noremap L $
+
+noremap Y y$
 
 " Fold
 nnoremap <leader>z zMzvzz
@@ -144,3 +146,4 @@ nmap <leader><leader> <c-^>
 " Settings for VimClojure
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
+let vimclojure#FuzzyIndent = 1
