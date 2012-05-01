@@ -7,7 +7,11 @@ filetype plugin indent on
 let mapleader = ","
 let maplocalleader = ","
 
-set bg=dark
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 "language English
 
 set shell=/bin/bash
@@ -115,7 +119,7 @@ autocmd BufWritePost vimrc source %
 
 let g:molokai_original = 1
 
-colorscheme molokai
+colorscheme solarized
 
 " syntastic
 
