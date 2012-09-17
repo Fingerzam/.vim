@@ -28,3 +28,9 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/atp"]
+	path = bundle/atp
+	url = git://atp-vim.git.sourceforge.net/gitroot/atp-vim/atp-vim
+[submodule "bundle/align"]
+	path = bundle/align
+	url = https://github.com/vim-scripts/Align.git
