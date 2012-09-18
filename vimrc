@@ -4,7 +4,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
-let mapleader = ","
+let mapleader = "å"
 let maplocalleader = ","
 
 if has('gui_running')
