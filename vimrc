@@ -50,7 +50,8 @@ fun! SetupVAM()
     let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
 
     " Tell VAM which plugins to fetch & load:
-    so vim-addon-manager.vim
+    let $VIMHOME = $HOME."/.vim/"
+    source $VIMHOME/vim-addon-manager.vim
     " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
 
     " Addons are put into plugin_root_dir/plugin-name directory
@@ -88,6 +89,9 @@ endif
 set shell=/bin/bash
 set encoding=utf8 hidden sw=4 ts=4 et ai si
 set backspace=indent,eol,start
+set backup
+set backupcopy&
+set backupdir=.,~/tmp
 set showmatch smarttab hlsearch incsearch history=1000
 set undolevels=1000 wildignore=*.swp,*.bak,*.class,*~
 set title noerrorbells undofile
@@ -104,7 +108,6 @@ set splitbelow
 set splitright
 set ttimeout
 set notimeout
-set backup
 set fillchars+=diff:\ 
 set virtualedit+=block
 set foldlevelstart=0
@@ -188,8 +191,6 @@ filetype plugin indent on
 syntax on
 autocmd BufWritePost vimrc source %
 
-let g:molokai_original = 1
-
 colorscheme solarized
 
 " syntastic
@@ -222,3 +223,13 @@ nmap <leader><leader> <c-^>
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 let vimclojure#FuzzyIndent = 1
+
+" fix insert mode esc with powerline in console vim
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
