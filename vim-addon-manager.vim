@@ -17,3 +17,5 @@ call vam#ActivateAddons(['github:lukerandall/haskellmode-vim'], {'auto_install' 
 call vam#ActivateAddons(['github:vim-scripts/AutomaticLaTexPlugin'], {'auto_install' : 1})
 
 call vam#ActivateAddons(['github:vim-scripts/VimClojure'], {'auto_install' : 1})
+call vam#ActivateAddons(['github:mattn/emmet-vim'], {'auto_install' : 1})
+call vam#ActivateAddons(['github:vim-scripts/matchit.zip'], {'auto_install' : 1})

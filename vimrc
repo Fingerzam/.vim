@@ -233,3 +233,6 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
